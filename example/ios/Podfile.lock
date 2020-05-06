@@ -17,28 +17,42 @@ PODS:
     - FBSDKCoreKit/Swift
     - FBSDKLoginKit/Swift
     - Flutter
+  - flutter_twitter_login (0.0.1):
+    - Flutter
+    - TwitterKit5
+  - TwitterCore (3.2.0)
+  - TwitterKit5 (5.1.0):
+    - TwitterCore (>= 3.1.0)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - flutter_facebook_auth (from `.symlinks/plugins/flutter_facebook_auth/ios`)
+  - flutter_twitter_login (from `.symlinks/plugins/flutter_twitter_login/ios`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - FBSDKCoreKit
     - FBSDKLoginKit
+    - TwitterCore
+    - TwitterKit5
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
   flutter_facebook_auth:
     :path: ".symlinks/plugins/flutter_facebook_auth/ios"
+  flutter_twitter_login:
+    :path: ".symlinks/plugins/flutter_twitter_login/ios"
 
 SPEC CHECKSUMS:
   FBSDKCoreKit: 5d55c8f3007c9c49b793617b9102e46355fc7e17
   FBSDKLoginKit: d46aa04d9bb9990a4deb6441736fae24a8c94496
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   flutter_facebook_auth: a63fc41100a6494584bef37a677e0f70670d9674
+  flutter_twitter_login: 11fd27d4428c4c8ed5d692f5f5370036935bee62
+  TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
+  TwitterKit5: de28c7a3e022f18fd644e0bd61f9fca448991faa
 
-PODFILE CHECKSUM: e45c292f618eeca3034958d33b444b6e1249b55f
+PODFILE CHECKSUM: 0ba44ad07df4ab62269dc769727cf0f12b1e453d
 
-COCOAPODS: 1.7.3
+COCOAPODS: 1.9.1

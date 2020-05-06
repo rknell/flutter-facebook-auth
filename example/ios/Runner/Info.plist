@@ -26,6 +26,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb1365719610250300</string>
+                <string>twitterkit-ZqSwcbTXyG3kVlgt6yWDwBsGh</string>
 			</array>
 		</dict>
 	</array>
@@ -39,6 +40,8 @@
 	<array>
 		<string>fbapi</string>
 		<string>fbauth2</string>
+        <string>twitter</string>
+        <string>twitterauth</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
