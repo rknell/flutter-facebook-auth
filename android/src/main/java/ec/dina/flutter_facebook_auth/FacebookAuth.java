@@ -108,6 +108,8 @@ public class FacebookAuth {
             put("token", accessToken.getToken());
             put("userId", accessToken.getUserId());
             put("expires", accessToken.getExpires().getTime());
+            put("grantedPermissions", new ArrayList<>(accessToken.getPermissions()));
+            put("declinedPermissions",  new ArrayList<>(accessToken.getDeclinedPermissions()));
         }};
     }
 

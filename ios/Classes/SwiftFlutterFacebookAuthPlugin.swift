@@ -15,7 +15,28 @@ public class SwiftFlutterFacebookAuthPlugin: NSObject, FlutterPlugin {
         let channel = FlutterMethodChannel(name: "ec.dina/flutter_facebook_auth", binaryMessenger: registrar.messenger())
         let instance = SwiftFlutterFacebookAuthPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
+        registrar.addApplicationDelegate(instance)
     }
+    
+    /// START ALLOW HANDLE NATIVE FACEBOOK APP
+    public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [AnyHashable : Any] = [:]) -> Bool {
+        var options = [UIApplication.LaunchOptionsKey: Any]()
+        for (k, value) in launchOptions {
+            let key = k as! UIApplication.LaunchOptionsKey
+            options[key] = value
+        }
+        ApplicationDelegate.shared.application(application,didFinishLaunchingWithOptions: options)
+        return true
+    }
+    
+   public func application( _ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:] ) -> Bool {
+        let processed = ApplicationDelegate.shared.application(
+            app, open: url,
+            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+            annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+        return processed;
+    }
+    /// END ALLOW HANDLE NATIVE FACEBOOK APP
     
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
@@ -81,7 +102,9 @@ public class SwiftFlutterFacebookAuthPlugin: NSObject, FlutterPlugin {
                 if(fbloginresult.isCancelled) {
                     self.finishWithResult(data: ["status":403])
                 } else {
-                    print("permissions",fbloginresult.grantedPermissions)
+                    
+                  
+                    
                     self.finishWithResult(data: [
                         "status":200,
                         "accessToken": self.getAccessToken(accessToken: fbloginresult.token!),
@@ -156,7 +179,9 @@ public class SwiftFlutterFacebookAuthPlugin: NSObject, FlutterPlugin {
         let data = [
             "token": accessToken.tokenString,
             "userId": accessToken.userID,
-            "expires": Int64((accessToken.expirationDate.timeIntervalSince1970*1000).rounded())
+            "expires": Int64((accessToken.expirationDate.timeIntervalSince1970*1000).rounded()),
+            "grantedPermissions":accessToken.permissions.map {item in item.name},
+            "declinedPermissions":accessToken.declinedPermissions.map {item in item.name},
             ] as [String : Any]
         
         return data;

@@ -20,8 +20,6 @@ import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 
-
-
 /**
  * FlutterFacebookAuthPlugin
  */
@@ -51,7 +49,6 @@ public class FlutterFacebookAuthPlugin implements MethodCallHandler, FlutterPlug
 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
-        Log.i("facebook:", "onAttachedToEngine");
         this.onAttachedToEngine(binding.getBinaryMessenger());
     }
 
