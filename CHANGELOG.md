@@ -1,3 +1,8 @@
+## 0.3.0
+- Added granted and declined permissions on AccessToken class, and removed AppDelegate.swift
+- Updated example
+- Updated documentation
+
 ## 0.2.4
 - Updated documentation and isLogged method to catch posible exceptions 
 
