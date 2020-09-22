@@ -3,12 +3,12 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_facebook_auth'
-  s.version          = '0.2.0'
-  s.summary          = 'A new Flutter plugin.'
+  s.version          = '0.3.1'
+  s.summary          = 'Plugin to Facebook authentication for iOS in your Flutter app'
   s.description      = <<-DESC
-A new Flutter plugin.
+Plugin to Facebook authentication for iOS in your Flutter app.
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'https://github.com/the-meedu-app/flutter-facebook-auth'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Darwin Morocho' => 'darwin.morocho@icloud.com' }
   s.source           = { :path => '.' }
@@ -16,10 +16,9 @@ A new Flutter plugin.
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
 
-  s.dependency 'FBSDKCoreKit/Swift'
-  s.dependency 'FBSDKLoginKit/Swift'
-  s.dependency 'FBSDKLoginKit/Swift'
-
+  s.dependency 'FBSDKCoreKit', '~> 7.1.0'
+  s.dependency 'FBSDKLoginKit', '~> 7.1.0'
+  s.platform = :ios, '9.0'
   s.ios.deployment_target = '9.0'
 end
 

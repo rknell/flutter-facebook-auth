@@ -1,3 +1,6 @@
+## 0.3.1
+- Updated FBSDKCoreKit and FBSDKLoginKit to ~> 7.1.0 on iOS
+
 ## 0.3.0
 - Added granted and declined permissions on AccessToken class, and removed AppDelegate.swift
 - Updated example
