@@ -1,3 +1,9 @@
+<p align="left">
+  <a href="https://pub.dev/packages/flutter_facebook_auth"><img alt="pub version" src="https://img.shields.io/pub/v/flutter_facebook_auth?color=%2300b0ff&label=flutter_facebook_auth&style=flat-square"></a>
+</p>
+
+ ---
+
 # flutter_facebook_auth
 
 Flutter plugin to make easy the facebook authentication in your flutter app. iOS and Android are supported.
