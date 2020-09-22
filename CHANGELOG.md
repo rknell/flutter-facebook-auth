@@ -1,3 +1,6 @@
+## 0.3.1+1
+- Added badge version
+
 ## 0.3.1
 - Updated FBSDKCoreKit and FBSDKLoginKit to ~> 7.1.0 on iOS
 
