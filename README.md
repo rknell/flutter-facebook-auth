@@ -1,8 +1,12 @@
 <p align="left">
   <a href="https://pub.dev/packages/flutter_facebook_auth"><img alt="pub version" src="https://img.shields.io/pub/v/flutter_facebook_auth?color=%2300b0ff&label=flutter_facebook_auth&style=flat-square"></a>
+  
+  <img alt="last commit" src="https://img.shields.io/github/last-commit/the-meedu-app/flutter-facebook-auth?color=%23ffa000&style=flat-square"/> 
+  <img alt="license" src="https://img.shields.io/github/license/the-meedu-app/flutter-facebook-auth?style=flat-square"/>
+  <img alt="stars" src="https://img.shields.io/github/stars/the-meedu-app/flutter-facebook-auth?style=social"/>
 </p>
 
- ---
+---
 
 # flutter_facebook_auth
 
@@ -15,7 +19,9 @@ Go to https://developers.facebook.com/docs/facebook-login/android/?locale=en and
 - Edit Your Resources and Manifest
 - Associate Your Package Name and Default Class with Your App
 - Provide the Development and Release Key Hashes for Your App
+
 ---
+
 ## **Install on iOS**
 
 In your Podfile uncomment the next line (You need set the minimum target to 9.0 or higher)
@@ -55,11 +61,12 @@ The plugin is written in `Swift`, so your project needs to have Swift support en
 
 ---
 
-## If you have implement another providers (Like Google) in your app you should merge values in Info.plist 
+## If you have implement another providers (Like Google) in your app you should merge values in Info.plist
 
 Check if you already have CFBundleURLTypes or LSApplicationQueriesSchemes keys in your Info.plist. If you have, you should merge their values, instead of adding a duplicate key.
 
 Example with Google and Facebook implemetation:
+
 ```xml
 <key>CFBundleURLTypes</key>
 <array>
@@ -75,12 +82,14 @@ Example with Google and Facebook implemetation:
 </array>
 ```
 
-
 ---
+
 ## NOTE
+
 for Objective-C projects (correctly works is not granted because this plugin was written with swift)
 
 ---
+
 ### **METHODS**
 
 Just use `FacebookAuth.instance`. NOTE: all methods are **asynchronous**.
@@ -113,6 +122,7 @@ Just use `FacebookAuth.instance`. NOTE: all methods are **asynchronous**.
 
 - `.isLogged` : check if the user has an active facebook session. The response will be `null` if the user is not logged.
   return one instance of `AccessToken` class:
+
   ```
   {
       expires: 1573493493209,
@@ -122,7 +132,6 @@ Just use `FacebookAuth.instance`. NOTE: all methods are **asynchronous**.
       grantedPermissions: [public_profile, email],
     }
   ```
-
 
 - `.getUserData({String fields = "name,email,picture"})` : get the user info only if the user is logged.
 
