@@ -19,6 +19,6 @@ Plugin to Facebook authentication for iOS in your Flutter app.
   s.dependency 'FBSDKCoreKit', '~> 7.1.0'
   s.dependency 'FBSDKLoginKit', '~> 7.1.0'
   s.platform = :ios, '9.0'
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '11.0'
 end
 
